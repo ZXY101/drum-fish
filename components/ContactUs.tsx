@@ -10,7 +10,7 @@ export default function ContactUs() {
         </li>
         <li className="flex">
           <h2 className="flex-1">Mobile:</h2>
-          <h2 className="flex-1">063 311 1136</h2>
+          <h2 className="flex-1">063-311-1136</h2>
         </li>
       </ul>
     </div>
