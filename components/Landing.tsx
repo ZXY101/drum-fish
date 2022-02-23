@@ -4,31 +4,22 @@ import Image from 'next/image'
 type Props = {}
 
 export default function Landing({}: Props) {
+  const copykek = `Drumfish is in alternative rock/grunge/garage rock band (what are genres anyway?) coming at you from South Africa.
+  Being a fairly new band in the scene since September 2020 they have worked tirelessly to become recognised in the local rock scene of Johannesburg, with their first nose bleed inducing single 'Demeanour' released in January 2022 they are looking to get more of their original content out too the masses.`
+  
   return (
-    <>
-      <div className='fixed h-full w-screen opacity-5 pointer-events-none'>
-        <Image
-          src="/images/drumfish.jpg"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
+    <div className='md:h-screen bg-cover bg-fixed bg-center bg-no-repeat bg-[url(/images/fish.jpg)] shadow-[0_-100px_50px_-2px_rgba(0,0,0,1)_inset]'>
+      <div className='md:h-screen bg-black bg-opacity-70'>
+        <h1 className='text-7xl md:text-9xl text-center p-4 font-bold text-white'>DRUMFISH</h1>
+        <div className='p-3 justify-center flex mix-blend-screen'>
+          <Image
+            src="/images/logo.png"
+            width={700}
+            height={700}
+            quality={100}
+          />
+        </div>
       </div>
-      <h1 className='text-white text-9xl text-center p-4 font-mono text-transparent bg-clip-text bg-gradient-to-br from-gray-100 to-gray-800'>Drum Fish</h1>
-      <div className='p-3 justify-center flex mix-blend-screen '>
-      <Image
-        src="/images/logo.jpg"
-        width={500}
-        height={500}
-        quality={100}
-      />
     </div>
-    <div className='justify-center flex p-10'>
-      <h1 className='text-white text-lg font-mono text-center lg:w-2/4'>
-        Drumfish is in alternative rock/grunge/garage rock band (what are genres anyway?) coming at you from South Africa.
-        Being a fairly new band in the scene since September 2020 they have worked tirelessly to become recognised in the local rock scene of Johannesburg, with their first nose bleed inducing single 'Demeanour' released in January 2022 they are looking to get more of their original content out too the masses.
-      </h1>
-    </div>
-    </>
   )
 }
