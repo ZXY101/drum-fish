@@ -3,7 +3,7 @@ type Props = {}
 export default function UpcomingShows({}: Props) {
   return (
     <div className="text-white font-mono ">
-      <div className="p-10">
+      <div className="px-2 pb-2 pt-10 md:p-10">
         <h1 className="text-3xl ">Upcoming shows</h1>
         <div className="border-b-2 border-white p-1"></div>
         <ul className="py-1 text-xs md:text-lg">
