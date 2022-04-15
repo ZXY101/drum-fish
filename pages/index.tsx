@@ -9,7 +9,6 @@ import Landing from '../components/Landing'
 import ContactUs from '../components/ContactUs'
 
 const Home: NextPage = () => {
-  const [showBio, setShowBio]= React.useState(false);
   const bio = `Greetings! We are Drumfish - alt/grunge/garage rock band (what are genres, anyway?), coming at you from Johannesburg, South Africa.
   Since our inception in September '20 we've been making noise in the local Jozi rock scene, and are very proud to present our first nose-bleed-inducing single - 'Demeanour'.
   Give it a listen, you might get reeled in…
@@ -22,10 +21,10 @@ const Home: NextPage = () => {
           <title>Drum Fish</title>
       </Head>
       <div className='bg-black h-full'>
-        <div onClick={() => setShowBio((showBio) => !showBio)}><Landing/></div>
-        {showBio ? <div className='text-white md:text-4xl text-center mx-2 pb-10 sm:px-10'>
+        <Landing/>
+        <div className='text-white md:text-4xl text-center mx-2 pb-10 sm:px-10'>
           {bio.toUpperCase()}
-        </div> : null}
+        </div> 
         <Music/>
         <UpcomingShows/>
         <ContactUs/>
