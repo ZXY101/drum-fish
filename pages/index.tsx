@@ -17,19 +17,19 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>Drum Fish</title>
       </Head>
       <div className='bg-black h-full'>
         <div onClick={() => setShowBio((showBio) => !showBio)}><Landing/></div>
-        {showBio ? <div className='text-white md:text-4xl text-center mx-2 pb-10 '>
+        {showBio ? <div className='text-white md:text-4xl text-center mx-2 pb-10 sm:px-10'>
           {bio.toUpperCase()}
         </div> : null}
         <Music/>
         <UpcomingShows/>
         <ContactUs/>
-        {/* <Header/> */}
+        <Header/>
         <Footer/>
       </div>
     </>
