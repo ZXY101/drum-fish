@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['BR Firma', 'Matiz'],
-    },
+        matiz: ['Matiz'],
+      },
     },
   },
   plugins: [],

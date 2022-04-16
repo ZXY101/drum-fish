@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>Drum Fish</title>
       </Head>
-      <div className='bg-black h-full'>
+      <div className='bg-black h-full font-matiz'>
         <Landing/>
         <div className='text-white md:text-4xl text-center mx-2 pb-10 sm:px-10'>
           {bio.toUpperCase()}
