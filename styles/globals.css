@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.embla {
+  position: relative;
+}
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  flex: 0 0 100%;
+}
+
 @font-face {
   font-family: 'Matiz';
   src: url('/font/Matiz.ttf');
