@@ -3,14 +3,32 @@ import Link from 'next/link';
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiOutlineClose} from 'react-icons/ai'
 
+type HeaderItemProps = {
+  onPress: () => void;
+  id: string;
+  name: string;
+}
+
+function HeaderItem({onPress, id, name}: HeaderItemProps){
+  return(
+    <Link href={id}>
+      <a onClick={onPress} href={id} className="px-4 hover:text-white font-bold">{name}</a>
+    </Link>
+  );
+}
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false); 
+  const onPress = React.useCallback(() => {
+    setMenuOpen(false);
+  }, []);
   const headerItems = (
     <>
-      <Link href="#home"><a onClick={() => setMenuOpen(false)} href='#' className="px-4 hover:text-white">HOME</a></Link>
-      <Link href="#music"><a onClick={() => setMenuOpen(false)} href='#music' className="px-4 hover:text-white">MUSIC</a></Link>
-      <Link href='#upcoming-shows'><a onClick={() => setMenuOpen(false)} href='#upc' className="px-4 hover:text-white">SHOWS</a></Link>
-      <Link href='#contact-us'><a onClick={() => setMenuOpen(false)} href='#upc' className="px-4 hover:text-white">CONTACT US</a></Link>
+      <HeaderItem onPress={onPress} id='#home' name='HOME'/>
+      <HeaderItem onPress={onPress} id='#music' name='MUSIC'/>
+      <HeaderItem onPress={onPress} id='#about-us' name='ABOUT US'/>
+      <HeaderItem onPress={onPress} id='#upcoming-shows' name='SHOWS'/>
+      <HeaderItem onPress={onPress} id='#contact-us' name='CONTACT US'/>
     </>
   );
 

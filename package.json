@@ -6,6 +6,7 @@
     "start": "next start -p $PORT"
   },
   "dependencies": {
+    "@storyblok/react": "^1.0.5",
     "embla-carousel-autoplay": "^6.2.0",
     "embla-carousel-react": "^6.2.0",
     "next": "latest",

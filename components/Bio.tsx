@@ -31,10 +31,10 @@ export const EmblaCarousel = ({slides, options, plugins}: EmblaCarouselType) => 
           ))}
         </div>
       </div>
-      <button className="absolute top-1/2 -translate-y-1/2 left-0 bg-opacity-50 px-2 bg-black h-full" onClick={scrollPrev}>
+      <button className="absolute top-1/2 -translate-y-1/2 left-0 bg-opacity-50 px-2 bg-black h-full hidden sm:block" onClick={scrollPrev}>
         <MdArrowBackIosNew/>
       </button>
-      <button className="absolute top-1/2 -translate-y-1/2 right-0 bg-opacity-50 px-2 bg-black h-full" onClick={scrollNext}>
+      <button className="absolute top-1/2 -translate-y-1/2 right-0 bg-opacity-50 px-2 bg-black h-full hidden sm:block" onClick={scrollNext}>
         <MdArrowForwardIos/>
       </button>
     </div>
@@ -43,17 +43,15 @@ export const EmblaCarousel = ({slides, options, plugins}: EmblaCarouselType) => 
 
 
 export default function Bio() {
-  const bio = `Greetings! We are Drumfish - alt/grunge/garage rock band (what are genres, anyway?), coming at you from Johannesburg, South Africa.
-  Since our inception in September '20 we've been making noise in the local Jozi rock scene, and are very proud to present our first nose-bleed-inducing single - 'Demeanour'.
-  Give it a listen, you might get reeled in…
-  Watch this space - we're aiming to get more of our original content out to the masses! `
+  const bio = `Greetings, We are Drumfish.\n\n An alt/grunge/garage rock band (what are genres, anyway?), coming at you from Johannesburg, South Africa.\n
+  Since our inception in September '20 we've been making noise in the local Jozi rock scene, and are very proud to present our first single - 'Demeanour'.\n `
   return (
-    <div className='text-white  text-center mx-2 pt-10 sm:px-10 flex sm:flex-row flex-col gap-5'>
-      <div className='flex-1 md:text-4xl'>
-        {bio.toUpperCase()}
+    <div className='text-white  flex xl:flex-row flex-col gap-5' id='about-us'>
+      <div className='flex-1 md:text-5xl whitespace-pre-line'>
+        <p>{bio.toUpperCase()}</p>
       </div>
-      <div className='flex-1'>
-        <EmblaCarousel slides={[<img className='h-[500px] justify-center flex w-full object-cover' src='/images/char.jpg'/>, <img className='h-[500px] justify-center flex w-full object-cover' src='/images/fish.jpg'/>]} options={{loop: true }} plugins={[Autoplay({delay: 5000})]}/>
+      <div className='flex-1 m-auto'>
+        <EmblaCarousel slides={[<img className='h-[560px] justify-center flex w-full object-cover' src='/images/char.jpg'/>, <img className='h-[560px] justify-center flex w-full object-cover' src='/images/fish.jpg'/>]} options={{loop: true }} plugins={[Autoplay({delay: 5000})]}/>
       </div>
     </div> 
   )
