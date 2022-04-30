@@ -25,16 +25,16 @@ const Home: NextPage<HomeProps> = ({story}: HomeProps) => {
           <title>Drum Fish</title>
       </Head>
       <Landing/>
-      <h1>{story ? story.name : 'TEST'}</h1>
-      <StoryblokComponent blok={story?.content} />
-      <Header/>
-      <Footer/>
+      {/* <h1>{story ? story.name : 'TEST'}</h1>
+      <StoryblokComponent blok={story?.content} /> */}
       <div className='bg-black h-full font-oswald flex flex-col gap-5 px-2 sm:px-10'>
         <Music/>
         <Bio />
         <UpcomingShows/>
         <ContactUs/>
       </div>
+      <Header/>
+      <Footer/>
     </>
   )
 }

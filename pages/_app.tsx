@@ -2,9 +2,11 @@ import { storyblokInit, apiPlugin } from '@storyblok/react';
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Teaser from '../components/Teaser';
+import Page from '../components/Page';
 
 const components = {
   teaser: Teaser,
+  page: Page,
 };
 
 storyblokInit({

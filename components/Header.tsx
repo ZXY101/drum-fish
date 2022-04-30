@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-black w-screen bg-opacity-50 h-16 fixed top-0 invisible md:visible">
+      <div className="bg-black w-screen bg-opacity-80 h-16 fixed top-0 invisible md:visible">
         <div className="text-gray-400 align-middle  flex h-full items-center text-3xl gap-1 ">
           {headerItems}
         </div>

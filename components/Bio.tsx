@@ -21,7 +21,7 @@ export const EmblaCarousel = ({slides, options, plugins}: EmblaCarouselType) => 
   , [emblaApi]);
 
   return (
-    <div className="embla relative  text-4xl">
+    <div className="embla relative  text-4xl ">
       <div  className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, index) => (
@@ -46,7 +46,7 @@ export default function Bio() {
   const bio = `Greetings, We are Drumfish.\n\n An alt/grunge/garage rock band (what are genres, anyway?), coming at you from Johannesburg, South Africa.\n
   Since our inception in September '20 we've been making noise in the local Jozi rock scene, and are very proud to present our first single - 'Demeanour'.\n `
   return (
-    <div className='text-white  flex xl:flex-row flex-col gap-5' id='about-us'>
+    <div className='text-white  flex xl:flex-row flex-col gap-5 sm:pt-16' id='about-us'>
       <div className='flex-1 md:text-5xl whitespace-pre-line'>
         <p>{bio.toUpperCase()}</p>
       </div>
