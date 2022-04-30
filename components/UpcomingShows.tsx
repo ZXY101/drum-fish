@@ -1,33 +1,30 @@
+import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+type Props = {
+  blok: any,
+}
 
-type Props = {}
-
-export default function UpcomingShows({}: Props) {
+export function Show({ blok }: {blok: any}){
   return (
-    <div className="text-white" id='upcoming-shows'>
+    <a {...storyblokEditable(blok)} href={blok.link.url} target='_blank' className=" hover:text-gray-500">
+      <li className="flex py-1">
+        <h1 className="flex-1">{blok.title}</h1>
+        <h1 className="flex-1">{blok.location}</h1>
+        <h1 className="flex-1">{blok.date}</h1>
+      </li>
+    </a>
+  );
+  
+}
+
+export default function UpcomingShows({blok}: Props) {
+  return (
+    <div {...storyblokEditable(blok)} className="text-white  pt-5" id='upcoming-shows'>
       <h1 className="text-3xl font-bold">Upcoming shows</h1>
       <div className="border-b-2 border-white p-1"></div>
       <ul className="py-1 text-xs md:text-lg">
-        <a href="https://www.facebook.com/drumfishband/photos/a.120683756742745/324193436391775/" target='_blank' className=" hover:text-gray-500">
-          <li className="flex py-1">
-            <h1 className="flex-1">Battle of the bands</h1>
-            <h1 className="flex-1">Sundowners - Kliprivier drive</h1>
-            <h1 className="flex-1">05/03/2022</h1>
-          </li>
-        </a>
-        <a href="https://www.facebook.com/drumfishband/photos/a.120683756742745/324193436391775/" target='_blank' className=" hover:text-gray-500">
-          <li className="flex py-1">
-            <h1 className="flex-1">Battle of the bands</h1>
-            <h1 className="flex-1">Sundowners - Kliprivier drive</h1>
-            <h1 className="flex-1">05/03/2022</h1>
-          </li>
-        </a>
-        <a href="https://www.facebook.com/drumfishband/photos/a.120683756742745/324193436391775/" target='_blank' className=" hover:text-gray-500">
-          <li className="flex py-1">
-            <h1 className="flex-1">Battle of the bands</h1>
-            <h1 className="flex-1">Sundowners - Kliprivier drive</h1>
-            <h1 className="flex-1">05/03/2022</h1>
-          </li>
-        </a>
+        {blok.shows.map((nestedBlok: any) => (
+          <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+        ))}
       </ul>
     </div>
   )

@@ -2,10 +2,10 @@ import * as React from 'react';
 import useEmblaCarousel, {EmblaOptionsType, EmblaPluginType} from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import {MdArrowBackIosNew, MdArrowForwardIos} from 'react-icons/md';
-
+import { storyblokEditable } from "@storyblok/react";
 
 type EmblaCarouselType = {
-  slides: React.ReactNode[];
+  slides: {filename: string}[];
   options?: EmblaOptionsType;
   plugins: EmblaPluginType[];
 }
@@ -21,12 +21,13 @@ export const EmblaCarousel = ({slides, options, plugins}: EmblaCarouselType) => 
   , [emblaApi]);
 
   return (
-    <div className="embla relative  text-4xl ">
+    <div className="embla relative text-4xl ">
       <div  className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
-              {slide}
+              <img className='h-[560px] justify-center flex w-full object-cover' src={slide.filename}/>
+              
             </div>
           ))}
         </div>
@@ -42,16 +43,14 @@ export const EmblaCarousel = ({slides, options, plugins}: EmblaCarouselType) => 
 }
 
 
-export default function Bio() {
-  const bio = `Greetings, We are Drumfish.\n\n An alt/grunge/garage rock band (what are genres, anyway?), coming at you from Johannesburg, South Africa.\n
-  Since our inception in September '20 we've been making noise in the local Jozi rock scene, and are very proud to present our first single - 'Demeanour'.\n `
+export default function Bio({ blok }: {blok: any}) {
   return (
-    <div className='text-white  flex xl:flex-row flex-col gap-5 sm:pt-16' id='about-us'>
+    <div {...storyblokEditable(blok)} className='text-white  flex xl:flex-row flex-col gap-5 sm:pt-16 pt-5' id='about-us'>
       <div className='flex-1 md:text-5xl whitespace-pre-line'>
-        <p>{bio.toUpperCase()}</p>
+        <p>{blok.bio.toUpperCase()}</p>
       </div>
       <div className='flex-1 m-auto'>
-        <EmblaCarousel slides={[<img className='h-[560px] justify-center flex w-full object-cover' src='/images/char.jpg'/>, <img className='h-[560px] justify-center flex w-full object-cover' src='/images/fish.jpg'/>]} options={{loop: true }} plugins={[Autoplay({delay: 5000})]}/>
+        <EmblaCarousel slides={blok.slides} options={{loop: true }} plugins={[Autoplay({delay: 5000})]}/>
       </div>
     </div> 
   )
