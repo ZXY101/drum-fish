@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Image from 'next/image'
 import useEmblaCarousel, {EmblaOptionsType, EmblaPluginType} from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import {MdArrowBackIosNew, MdArrowForwardIos} from 'react-icons/md';
@@ -25,9 +26,14 @@ export const EmblaCarousel = ({slides, options, plugins}: EmblaCarouselType) => 
       <div  className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, index) => (
-            <div className="embla__slide" key={index}>
-              <img className='h-[560px] justify-center flex w-full object-cover' src={slide.filename}/>
-              
+            <div className="embla__slide h-[560px] justify-center flex w-full object-cover" key={index} >
+              <Image
+                src={slide.filename}
+                quality={100}
+                priority={true}
+                objectFit='cover'
+                layout='fill'
+              />
             </div>
           ))}
         </div>
@@ -50,7 +56,7 @@ export default function Bio({ blok }: {blok: any}) {
         <p>{blok.bio.toUpperCase()}</p>
       </div>
       <div className='flex-1 m-auto'>
-        <EmblaCarousel slides={blok.slides} options={{loop: true }} plugins={[Autoplay({delay: 5000})]}/>
+        <EmblaCarousel slides={blok.slides} options={{loop: true }} plugins={[Autoplay({delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true})]}/>
       </div>
     </div> 
   )
