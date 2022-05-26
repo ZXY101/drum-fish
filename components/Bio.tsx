@@ -26,15 +26,9 @@ export const EmblaCarousel = ({slides, options, plugins}: EmblaCarouselType) => 
       <div  className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, index) => (
-            <div className="embla__slide h-[560px] justify-center flex w-full object-cover" key={index} >
-              <Image
-                src={slide.filename}
-                quality={100}
-                priority={true}
-                objectFit='cover'
-                layout='fill'
-              />
-            </div>
+            <div className="embla__slide" key={index}>
+              <img className='h-[560px] justify-center flex w-full object-cover' src={slide.filename}/>
+          </div>
           ))}
         </div>
       </div>
